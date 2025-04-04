@@ -1,22 +1,49 @@
-// Create the 'basemap' tile layer that will be the background of our map.
+// Create the tile layers that will be the background of our map.
+// Create the 'topo' tile layer.
+let topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
 
-
-// OPTIONAL: Step 2
 // Create the 'street' tile layer as a second background of the map
-
+let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
 
 // Create the map object with center and zoom options.
+let myMap = L.map("map", {
+  center: [40.73, -74.0059],
+  zoom: 12,
+  layers: [topo]  // add the 'topo' base tile layer to the map.
+});
 
 
-// Then add the 'basemap' tile layer to the map.
-
-// OPTIONAL: Step 2
 // Create the layer groups, base maps, and overlays for our two sets of data, earthquakes and tectonic_plates.
 // Add a control to the map that will allow the user to change which layers are visible.
 
+// Create the layer groups
+let earthquakes = L.layerGroup();
+let techtonic_plates = L.layerGroup();
+
+// Create a baseMaps object
+let baseMaps = {
+  "Street Map": street,
+  "Topographic Map": topo
+};
+
+// Create overlays for earthquakes and tectonic plates
+let overlayMaps = {
+  "Earthquakes": earthquakes,
+  "Techtonic Plates": techtonic_plates
+};
+
+// Add a control to the map
+L.control.layers(baseMaps, overlayMaps, {
+  collapsed: false
+}).addTo(myMap);
+
 
 // Make a request that retrieves the earthquake geoJSON data.
-d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function (data) {
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson").then(function (data) {
 
   // This function returns the style data for each of the earthquakes we plot on
   // the map. Pass the magnitude and depth of the earthquake into two separate functions
@@ -49,7 +76,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     }
   // OPTIONAL: Step 2
   // Add the data to the earthquake layer instead of directly to the map.
-  }).addTo(map);
+  }).addTo(myMap);
 
   // Create a legend control object.
   let legend = L.control({

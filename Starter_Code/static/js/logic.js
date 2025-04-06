@@ -94,7 +94,9 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geo
     style: styleInfo,
     // Create a popup for each marker to display the magnitude and location of the earthquake after the marker has been created and styled
     onEachFeature: function (feature, layer) {
-      layer.bindPopup(`<h3>${feature.properties.mag}</h3><hr><p>${feature.properties.place}</p>`);
+      layer.bindPopup(`<h3>Magnitude: ${feature.properties.mag}</h3>
+        <hr><p>${feature.properties.place}</p>
+        <p>Depth: ${feature.geometry.coordinates[2]}km`);
     }
 
   // Add the data to the earthquake layer instead of directly to the map.
@@ -133,13 +135,13 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geo
   // Finally, add the legend to the map.
   legend.addTo(myMap);
 
-  // OPTIONAL: Step 2
   // Make a request to get our Tectonic Plate geoJSON data.
-  d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (plate_data) {
+  // d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (plate_data) {
     // Save the geoJSON data, along with style information, to the tectonic_plates layer.
 
+  //   }).addTo(techtonic_plates);
 
-    // Then add the tectonic_plates layer to the map.
-
-  });
+  //   // Then add the tectonic_plates layer to the map.
+  // }).addTo(myMap);
+  
 });

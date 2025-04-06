@@ -10,34 +10,25 @@
 - [Resources](#resources)
 
 ## Overview
-A interactive project exploring the biodiversity of belly buttons using **JavaScript**. This app allows users to visualize different species of bacteria found in the belly buttons of various test subjects, displayed using data visualizations and interactive charts.
+A interactive project exploring the visualization of earthquake data from the *United States Geological Survey*, or *USGS* using **JavaScript** and **Leaflet**. This map allows users to visualize all earthquakes that have happened in the last 30 days overlayed on different map layers. The data is displayed using markers that reflect the magnitude and depth of each earthquake. 
 
-all earthquakes in the last 30 days
+
 
 ### Dashboard Example:
 
-![Dashboard Example](dashboard_example/dashboard_image.png)
+![Dashboard Example]()
 
 ## Deployment
-This app is deployed on **GitHub Pages**: [Click here to deploy the app](https://angelinamurdock.github.io/belly-button-challenge/)
+This app is deployed on **GitHub Pages**: [Click here to deploy the app]()
 
 ## Features
-`samples.json`: Contains demographic information and sample data for all of the test subjects, including bacteria culture data.
 
-`app.js`:
-- Implements a bar chart to visualize data of the top 10 bacteria cultures found in each test subject.
-- Implements a bubble chart for visualizing data of the number of bacteria cultures per sample by OTU ID.
-- Loop through metadata to get the demographic info for each individual and populates it into a panel.
-
-`index.html`: The main HTML file that connects all components of the app.
 
 ## Methodology
 ### Data Processing and Visualization
-**JavaScript Functions**: The app relies on JavaScript functions to handle data extraction, dynamic visualization updates and interactivity. Key functions include:
-- Loading and parsing JSON data from `samples.json`.
-- Uploading charts and panels based on user interaction.
+**JavaScript Functions**: The app relies on JavaScript functions to retreive the earthquake geoJSON data and return this data in a specific way to create dynamic visualizations.
 
-**Plotly Data Visualizations**: The app uses Plotly to create interactive bar and bubble charts. Plotly allows users to interact with the data points, making the visualizations both informative and engaging.
+**Leaflet**: The app uses Leaflet to create an interactive map. Leaflet allows users to interact with the data points, allowing them to get information on the magnitude, location and depth of each earthquake.
 
 ## Resources
 * **USGS GeoJSON Feed:** http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php 

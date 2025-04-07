@@ -25,8 +25,8 @@ let techtonic_plates = L.layerGroup();
 
 // Create the map object with center and zoom options.
 let myMap = L.map("map", {
-  center: [37.75, -121.05],
-  zoom: 8,
+  center: [28.75, -100.05],
+  zoom: 4,
   layers: [sat, earthquakes, techtonic_plates]  // add the 'street' base tile layer to the map.
 });
 
@@ -144,10 +144,19 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geo
   // Make a request to get our Tectonic Plate geoJSON data.
   d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (plate_data) {
     // Save the geoJSON data, along with style information, to the tectonic_plates layer.
+    L.geoJSON(plate_data, {
+      style: function (feature) {
+        return {
+          color: "orange",
+          weight: 2,
+          opacity: 1
+        };
+      }
 
+    // Add to techtonic_plates layer
     }).addTo(techtonic_plates);
 
-  //   // Then add the tectonic_plates layer to the map.
+  // Then add the tectonic_plates layer to the map.
   }).addTo(myMap);
   
 });

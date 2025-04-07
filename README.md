@@ -34,7 +34,7 @@ A interactive project exploring the visualization of earthquake data from the *U
 
 ### Part 2: Earthquake Map Visualization:
 
-![Part 2: Earthquake Map Visualization]()
+![Part 2: Earthquake Map Visualization](https://github.com/user-attachments/assets/dabfb95b-8081-4d83-9706-72f82fcef8d9)
 
 ## Deployment
 ### GitHub Pages Links

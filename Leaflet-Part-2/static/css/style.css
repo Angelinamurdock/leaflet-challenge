@@ -1,0 +1,27 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+/* Basic styling for the legend */
+.legend {
+  color: #555;
+  background: white;
+  padding: 8px 10px;
+  font-size: 14px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+/* Styling for each legend item */
+.legend i {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}

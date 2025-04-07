@@ -10,6 +10,11 @@ let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
 
+// Create the 'satellite' tile layer 
+let sat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: '&copy; <a href="https://www.esri.com">Esri</a>'
+});
+
 
 // Create the layer groups, base maps, and overlays for our two sets of data, earthquakes and tectonic_plates.
 // Add a control to the map that will allow the user to change which layers are visible.
@@ -22,11 +27,12 @@ let techtonic_plates = L.layerGroup();
 let myMap = L.map("map", {
   center: [37.75, -121.05],
   zoom: 8,
-  layers: [street, earthquakes]  // add the 'street' base tile layer to the map.
+  layers: [sat, earthquakes, techtonic_plates]  // add the 'street' base tile layer to the map.
 });
 
 // Create a baseMaps object
 let baseMaps = {
+  "Satellite Map": sat,
   "Street Map": street,
   "Topographic Map": topo
 };
@@ -136,12 +142,12 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geo
   legend.addTo(myMap);
 
   // Make a request to get our Tectonic Plate geoJSON data.
-  // d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (plate_data) {
+  d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function (plate_data) {
     // Save the geoJSON data, along with style information, to the tectonic_plates layer.
 
-  //   }).addTo(techtonic_plates);
+    }).addTo(techtonic_plates);
 
   //   // Then add the tectonic_plates layer to the map.
-  // }).addTo(myMap);
+  }).addTo(myMap);
   
 });

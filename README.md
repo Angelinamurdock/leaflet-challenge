@@ -16,13 +16,15 @@ A interactive project exploring the visualization of earthquake data from the *U
 
 ### Dashboard Example:
 
-![Dashboard Example]()
+![Dashboard Example](https://github.com/user-attachments/assets/4e9dc44c-4268-414e-bfe1-aa55b384b496)
 
 ## Deployment
 This app is deployed on **GitHub Pages**: [Click here to deploy the app]()
 
 ## Features
-
+**Leaflet-Part-1**
+* 
+**Leaflet-Part-2**
 
 ## Methodology
 ### Data Processing and Visualization
@@ -35,3 +37,5 @@ This app is deployed on **GitHub Pages**: [Click here to deploy the app]()
 * **DU Bootcamp Module 15:** Utilized challenge files and class materials from the bootcamp.
 * **ChatGPT:** Assisted with code explanations and debugging.
 * **Determining Earthquake Depths:** https://www.usgs.gov/programs/earthquake-hazards/determining-depth-earthquake 
+* **Leaflet Legend Creation:** https://gis.stackexchange.com/questions/133630/adding-leaflet-legend 
+* **ArcGIS Documentation:** https://developers.arcgis.com/documentation/portal-and-data-services/data-services/map-tile-services/display-map-tiles/ 

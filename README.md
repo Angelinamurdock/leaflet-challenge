@@ -40,6 +40,7 @@ A interactive project exploring the visualization of earthquake data from the *U
 ### GitHub Pages Links
 * [Part 1: Basic Earthquake Map](https://angelinamurdock.github.io/leaflet-challenge/Leaflet-Part-1/)
 * [Part 2: Enhanced Map with Techtonic Plate Overlay](https://angelinamurdock.github.io/leaflet-challenge/Leaflet-Part-2/)
+
 ### Steps to Deploy Locally
 **1. Clone the Repository:**
 ```bash
@@ -49,7 +50,6 @@ git clone https://github.com/angelinamurdock/leaflet-challenge.git
 * Choose to display Part 1 (basic earthquake map) or Part 2 (enhanced map with techtonic plate lines).
 * Open the `index.html` file within the corresponding folder.
 
-
 ## Methodology
 ### Data Processing and Visualization
 **JavaScript Functions**: The app uses on JavaScript functions to retreive the earthquake geoJSON data and return this data in a specific way to create dynamic visualizations.
@@ -57,9 +57,9 @@ git clone https://github.com/angelinamurdock/leaflet-challenge.git
 **Leaflet**: The app uses Leaflet to create an interactive map where users can explore earthquake data. The map allows users to interact with the data and get information on the magnitude, location and depth of each earthquake.
 
 ## Resources
-* **USGS GeoJSON Feed:** http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php 
+* [**USGS GeoJSON Feed**](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 * **DU Bootcamp Module 15:** Utilized challenge files and class materials from the bootcamp.
 * **ChatGPT:** Assisted with code explanations and debugging.
-* **Determining Earthquake Depths:** https://www.usgs.gov/programs/earthquake-hazards/determining-depth-earthquake 
-* **Leaflet Legend Creation:** https://gis.stackexchange.com/questions/133630/adding-leaflet-legend 
-* **ArcGIS Documentation:** https://developers.arcgis.com/documentation/portal-and-data-services/data-services/map-tile-services/display-map-tiles/ 
+* [**Determining Earthquake Depths**](https://www.usgs.gov/programs/earthquake-hazards/determining-depth-earthquake) 
+* [**Leaflet Legend Creation**](https://gis.stackexchange.com/questions/133630/adding-leaflet-legend) 
+* [**ArcGIS Documentation**](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/map-tile-services/display-map-tiles/) 
